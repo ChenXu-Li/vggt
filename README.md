@@ -175,6 +175,10 @@ Run the following command to run reconstruction and visualize the point clouds i
 ```bash
 python demo_viser.py --image_folder path/to/your/images/folder
 ```
+从autodl映射到本地浏览器
+```bash
+ssh -CNg -L 8080:127.0.0.1:8080  root@connect.nmb1.seetacloud.com -p 23994
+```
 
 ## Exporting to COLMAP Format
 

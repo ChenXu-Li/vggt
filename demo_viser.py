@@ -273,7 +273,7 @@ def apply_sky_segmentation(conf: np.ndarray, image_folder: str) -> np.ndarray:
     # Download skyseg.onnx if it doesn't exist
     if not os.path.exists("skyseg.onnx"):
         print("Downloading skyseg.onnx...")
-        download_file_from_url("https://huggingface.co/JianyuanWang/skyseg/resolve/main/skyseg.onnx", "skyseg.onnx")
+        download_file_from_url("https://hf-mirror.com/JianyuanWang/skyseg/resolve/main/skyseg.onnx", "skyseg.onnx")
 
     skyseg_session = onnxruntime.InferenceSession("skyseg.onnx")
     image_files = sorted(glob.glob(os.path.join(image_folder, "*")))
@@ -345,8 +345,8 @@ def main():
     # model = VGGT.from_pretrained("facebook/VGGT-1B")
 
     model = VGGT()
-    _URL = "https://huggingface.co/facebook/VGGT-1B/resolve/main/model.pt"
-    model.load_state_dict(torch.hub.load_state_dict_from_url(_URL))
+    model_path = "/root/autodl-tmp/weights/vggt/model.pt"
+    model.load_state_dict(torch.load(model_path))
 
     model.eval()
     model = model.to(device)

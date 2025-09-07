@@ -39,7 +39,7 @@ def build_vggsfm_tracker(model_path=None):
     tracker = TrackerPredictor()
 
     if model_path is None:
-        default_url = "https://huggingface.co/facebook/VGGSfM/resolve/main/vggsfm_v2_tracker.pt"
+        default_url = "https://hf-mirror.com/facebook/VGGSfM/resolve/main/vggsfm_v2_tracker.pt"
         tracker.load_state_dict(torch.hub.load_state_dict_from_url(default_url))
     else:
         tracker.load_state_dict(torch.load(model_path))

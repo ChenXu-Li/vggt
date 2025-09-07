@@ -104,7 +104,7 @@ def predictions_to_glb(
             if not os.path.exists("skyseg.onnx"):
                 print("Downloading skyseg.onnx...")
                 download_file_from_url(
-                    "https://huggingface.co/JianyuanWang/skyseg/resolve/main/skyseg.onnx", "skyseg.onnx"
+                    "https://hf-mirror.com/JianyuanWang/skyseg/resolve/main/skyseg.onnx", "skyseg.onnx"
                 )
 
             for i, image_name in enumerate(image_list):
